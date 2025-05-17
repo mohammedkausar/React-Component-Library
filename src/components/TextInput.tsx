@@ -1,10 +1,5 @@
 import React from "react";
-
-type InputClass = {
-  containerClass?: string;
-  labelClass?: string;
-  inputElementClass?: string;
-};
+import type { ElementClass } from "../types/commonTypes";
 
 // Input types
 interface TextInputType {
@@ -13,7 +8,7 @@ interface TextInputType {
   change: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   label?: string;
-  inputClass?: InputClass;
+  inputClass?: ElementClass;
   autocomplete?: string;
 }
 
@@ -39,7 +34,7 @@ const TextInput = ({
       </label>
       <input
         className={`border border-gray-200 p-1 ${
-          inputClass?.inputElementClass ?? ""
+          inputClass?.elementClass ?? ""
         }`}
         type="text"
         name={name}
